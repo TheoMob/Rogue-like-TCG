@@ -1,0 +1,28 @@
+fileFormatVersion: 2
+guid: efe9fc02741063b42ad66efa645fe508
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - card1: {instanceID: 0}
+  - card2: {instanceID: 0}
+  - card3: {instanceID: 0}
+  - card4: {instanceID: 0}
+  - card5: {instanceID: 0}
+  - card6: {instanceID: 0}
+  - card7: {instanceID: 0}
+  - card8: {instanceID: 0}
+  - card9: {instanceID: 0}
+  - card10: {instanceID: 0}
+  - card11: {instanceID: 0}
+  - card12: {instanceID: 0}
+  - card13: {instanceID: 0}
+  - card14: {instanceID: 0}
+  - card15: {instanceID: 0}
+  - playerArea: {instanceID: 0}
+  - enemyArea: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

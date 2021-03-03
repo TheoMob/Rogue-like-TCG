@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &834341648865307035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 834341648865307045}
+  - component: {fileID: 834341648865307034}
+  - component: {fileID: 834341649188203143}
+  - component: {fileID: 834341649188203144}
+  m_Layer: 0
+  m_Name: BattleManager
+  m_TagString: Battle Manager Tag
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &834341648865307045
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834341648865307035}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 297.1107, y: 167.58302, z: -17.157465}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &834341648865307034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834341648865307035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6de1b7e60578c204fbdd37d279208eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesAmount: 2
+  dropZone: {fileID: 0}
+  failureScene: {fileID: 0}
+  sucessScene: {fileID: 0}
+  yourTurnText: {fileID: 0}
+  enemyTurnText: {fileID: 0}
+  enemyIntentionsUI1: {fileID: 0}
+  enemyIntentionsUI2: {fileID: 0}
+  enemyManager1: {fileID: 0}
+  enemyManager2: {fileID: 0}
+  playerManagerScript: {fileID: 0}
+  playerDeckScript: {fileID: 0}
+  moveCardToHandScript: {fileID: 0}
+  enemySelected: {fileID: 0}
+  playerTurn: 1
+  selectingEnemy: 0
+--- !u!114 &834341649188203143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834341648865307035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a7771b301d308d46b90f109624dc552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &834341649188203144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834341648865307035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e6e46d0de016d4e84b6595ed1ef680, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debuffBuffBar: {fileID: 0}
+  confusionPrefab: {fileID: 5772150387158196145, guid: 197b634d58d7a754d9655372b4587e25, type: 3}
+  helpTextPreFab: {fileID: 5930321938712480549, guid: f927ab9464be9854cbb4cdfc9d87966a, type: 3}
