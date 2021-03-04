@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class EncounterManager : MonoBehaviour
 {
+    public DialogScriptableObject dialogData;
+
     private GameObject player;
     private Animator playerAnim;
     private PlayerManager playerManagerScript;
@@ -16,18 +18,19 @@ public class EncounterManager : MonoBehaviour
     private string[] dialogOptions = new string[5];
     private float delayTextTime = 0.08f;
 
-    private Vector2 moveTo;
     private bool movePlayer;
-    private bool startSomething = false;
-    public float speed = 5;
+    public Vector2 moveTo;
+    private float speed = 5;
     private float minDist = 1; // isso serve pra movimentar o player
-    public int dialogOption = 0;
+    [HideInInspector] public int dialogOption = 0;
+    private int dialogIndex = 0;
+
 
     public MyEnum Encounter = new MyEnum();
     public enum MyEnum
     {
         none,
-        SkeletonInForest,
+        Skeleted,
         test
     };
 
@@ -38,11 +41,16 @@ public class EncounterManager : MonoBehaviour
         playerManagerScript = player.GetComponent<PlayerManager>();
         playerRigid = player.GetComponent<Rigidbody2D>();
         dialogBoxText = dialogBox.transform.GetChild(0).GetComponent<Text>();
-        dialogOptionsText[0] = dialogBox.transform.GetChild(1).GetComponent<Text>();
-        dialogOptionsText[1] = dialogBox.transform.GetChild(2).GetComponent<Text>();
+
+        GameObject dialogoptions = dialogBox.transform.GetChild(1).gameObject;
+        for(int i = 0; i < 4; i++)
+        {
+            dialogOptionsText[i] = dialogoptions.transform.GetChild(i).GetComponent<Text>(); // isso armazena o objeto no qual são escritas as opções de resposta
+        }
+       
         dialogBox.SetActive(false);
 
-        randomEncounterSelector();
+        movePlayer = true;
 
     }
 
@@ -58,80 +66,57 @@ public class EncounterManager : MonoBehaviour
             {
                 movePlayer = false;
                 playerAnim.SetBool("Running", false);
-                startSomething = true;
-                randomEncounterSelector();
+                dialogs();
             }
         } 
     }
 
-    private void randomEncounterSelector()
+    private void dialogs ()
     {
-        if (Encounter.ToString() == "SkeletonInForest")
-            SkeletonInForest();
+        if (dialogIndex == 99)
+            return;
+
+        dialogBox.SetActive(true);
+
+        eventText = dialogData.DialogAmount[dialogIndex].DialogBox;
+        dialogOptions[0] = dialogData.DialogAmount[dialogIndex].Answer1;
+        dialogOptions[1] = dialogData.DialogAmount[dialogIndex].Answer2;
+        dialogOptions[2] = dialogData.DialogAmount[dialogIndex].Answer3;
+        dialogOptions[2] = dialogData.DialogAmount[dialogIndex].Answer4;
+
+        StartCoroutine("TypeWriterEffect", dialogIndex);
+
     }
 
-    IEnumerator TypeWriterEffect()
+    IEnumerator TypeWriterEffect( int dialogIndex)
     {
         for (int i = 0; i < eventText.Length; i++)
         {
             dialogBoxText.text = eventText.Substring(0, i + 1);
             yield return new WaitForSeconds(delayTextTime);
         }
-
-        for (int i = 0; i < dialogOptions[0].Length; i++)
+        for (int j = 0; j < dialogData.DialogAmount[dialogIndex].answersAmount; j++)
         {
-            dialogOptionsText[0].text = dialogOptions[0].Substring(0, i + 1);
-            yield return new WaitForSeconds(delayTextTime);
-        }
-        for (int i = 0; i < dialogOptions[1].Length; i++)
-        {
-            dialogOptionsText[1].text = dialogOptions[1].Substring(0, i + 1);
-            yield return new WaitForSeconds(delayTextTime);
+            for (int i = 0; i < dialogOptions[j].Length; i++)
+            {
+                dialogOptionsText[j].text = dialogOptions[j].Substring(0, i + 1);
+                yield return new WaitForSeconds(delayTextTime);
+            }
         }
 
         StartCoroutine("DialogSelection");
     }
 
-    private void SkeletonInForest()
-    {
-        if(!startSomething)
-        {
-            moveTo = new Vector2(0.5f, -4f);
-            movePlayer = true;
-        }
-        else
-        {
-            dialogBox.SetActive(true);
-            eventText = "you founded a fucking skeleted";
-            dialogOptions[0] = "> Face him! (lose 10 HP)";
-            dialogOptions[1] = "> well hello baby (???)";
-            StartCoroutine("TypeWriterEffect");
-        }
-    }
     IEnumerator DialogSelection()
     {
-        while(dialogOption == 0)
+        while (dialogOption == 0)
         {
             yield return null;
         }
-        if (dialogOption == 2)
-        {
-            EraseDialogBox();
 
-            eventText = "the skeleted said he wants you ded";
-            dialogOptions[0] = "> oh no!";
-            dialogOptions[1] = "> Oh yeah!";
-            StartCoroutine("TypeWriterEffect");
-        }
-        if (dialogOption == 1)
-        {
-            EraseDialogBox();
-
-            eventText = "You win, but the skeleted stabbed your head";
-            dialogOptions[0] = "> oh okay";
-            dialogOptions[1] = "";
-            StartCoroutine("TypeWriterEffect");
-        }
+        encounterSelector();
+        EraseDialogBox();
+        dialogs();
 
         dialogOption = 0;
         yield return null;
@@ -142,5 +127,47 @@ public class EncounterManager : MonoBehaviour
         dialogBoxText.text = "";
         dialogOptionsText[0].text = "";
         dialogOptionsText[1].text = "";
+        dialogOptionsText[2].text = "";
+        dialogOptionsText[3].text = "";
+    }
+
+    private void encounterSelector()
+    {
+        if (Encounter.ToString() == "Skeleted")
+            Skeleton();
+    }
+    private void Skeleton()
+    {
+        switch (dialogIndex)
+        {
+            case 0:
+                if (dialogOption == 1)
+                {
+                    Debug.Log("player perde 10 de vida");
+                    dialogIndex = 1;
+                }
+                if (dialogOption == 2)
+                    dialogIndex = 2;
+                break;
+            case 1:
+                Debug.Log("Termina o bglh");
+                dialogIndex = 99;
+                EraseDialogBox();
+                break;
+            case 2:
+                if (dialogOption == 1)
+                {
+                    Debug.Log("Player perde 10 de vida");
+                    dialogIndex = 1;
+                }
+                if (dialogOption == 2)
+                    dialogIndex = 3;
+                break;
+            case 3:
+                Debug.Log("termina o bglh sem perder vida");
+                dialogIndex = 99;
+                break;
+        }
+
     }
 }

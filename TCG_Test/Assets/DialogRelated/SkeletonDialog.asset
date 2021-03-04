@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b55d3d488fcafa41af7407fc1ed2b9c, type: 3}
+  m_Name: SkeletonDialog
+  m_EditorClassIdentifier: 
+  DialogAmount:
+  - DialogBox: you founded a fucking skeleted
+    answersAmount: 2
+    Answer1: '> Face him! (lose 10 hp)'
+    Answer2: '> Oh hello baby.. (???)'
+    Answer3: 
+    Answer4: 
+  - DialogBox: you win, but the skeleted stabbed your hed
+    answersAmount: 2
+    Answer1: '> Shoulda tried the baby thing...'
+    Answer2: '> Let''s go!'
+    Answer3: 
+    Answer4: 
+  - DialogBox: the skeleted said he wants you ded
+    answersAmount: 2
+    Answer1: '> face him! (lose 10 hp)'
+    Answer2: '> cmon baby let''s talk about it'
+    Answer3: 
+    Answer4: 
+  - DialogBox: the skeleted blushed and let you passed
+    answersAmount: 2
+    Answer1: '> you are a sweety baby'
+    Answer2: '> Okay...'
+    Answer3: 
+    Answer4: 
