@@ -1,4 +1,4 @@
-# TCGGame
+# Rogue-like TCG
 
 ## PT/BR
 
