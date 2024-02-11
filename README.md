@@ -1,21 +1,4 @@
-# Rogue-like TCG
-
-## PT/BR
-
-Esse repositório é voltado a um pequeno projeto de um jogo rogue-like de cartas bem rudimentar. Ele possui uma pequena demo que demonstra os conceitos básicos do projeto, que serão listados abaixo. De minha autoria, se extende todos os códigos e toda a implementação do projeto, com excessão de alguns gráficos e animações, como o do personagem, o dos monstros e o do background da cena1 e da cena2, que foram utilizados apenas placeHolders.
-
-### Sistema de combate de cartas:
-  Na parte de combate, o projeto conta com um personagem com vida, defesa e mana (ou energia), e um baralho básico de cartas que ele pode usar tanto para se defender quanto para atacar os inimigos, dois tipos distintos de inimigos, um sistema de loot aleatório de cartas (após vencer a batalha), diversas animações de combate e todo o sistema implementado em UI do movimento das cartas (utilizar, comprar, descartar, embaralhar), além do sistema de turnos nos quais o player alterna com os inimigos.
-  
- ### Inimigos:
-  Há dois tipos de inimigos, um simples goblin que apenas alterna entre golpes fracos e um golpe forte, e um morcego ciclop que, alem de ataques normais, possui um debuff que deixa o player confuso, fazendo assim com que ele não consiga escolher o alvo do seu ataque.
-  
-  ### Baralho:
-  O projeto também conta com diversas funções que tem como objetivo, guardar o baralho do player, embaralhar o baralho, buscar cartas do baralho, retornar cartas para o baralho, mandar cartas usadas para o cemitério, comprar cartas, editar o baralho por meio de uma interface de inventário, entre outros detalhes.
-   
- ### Outros:
- Há também uma parte inacabada que se trata de encontros randômicos que o jogador poderia ter no meio da campanha, nos quais trariam escolhas para o jogador que alterariam o resultado do encontro, coisas como atacar, ou poupar, ou roubar, etc... Entretanto, essa parte estava em uma fase bem rudimentar quando foi descontinuada.
- 
+# Rogue-like TCG 
  ## EN
  
  This repository is dedicated to a small rudimentary project about a rogue-like card-based game. In this repository, there's a little demo that demonstrates some basic concepts of the project, those that will be listed below. Everything in this project is of my authorship, with the exception of some sprites and animations, such as the player, the enemies and both backgrounds from scene one and two, those that are just placeHolders.
@@ -31,6 +14,22 @@ Esse repositório é voltado a um pequeno projeto de um jogo rogue-like de carta
   
  ### Others:
  There is also an unfinished part which is about random encounters that the player could have in the middle of the campaign, which would bring choices to the player that would change the outcome of the encounter, things like attacking, or sparing, or stealing, etc... However, this part was in a very rudimentary phase when it was discontinued.
+
+ ## PT/BR
+
+Esse repositório é voltado a um pequeno projeto de um jogo rogue-like de cartas bem rudimentar. Ele possui uma pequena demo que demonstra os conceitos básicos do projeto, que serão listados abaixo. De minha autoria, se extende todos os códigos e toda a implementação do projeto, com excessão de alguns gráficos e animações, como o do personagem, o dos monstros e o do background da cena1 e da cena2, que foram utilizados apenas placeHolders.
+
+### Sistema de combate de cartas:
+  Na parte de combate, o projeto conta com um personagem com vida, defesa e mana (ou energia), e um baralho básico de cartas que ele pode usar tanto para se defender quanto para atacar os inimigos, dois tipos distintos de inimigos, um sistema de loot aleatório de cartas (após vencer a batalha), diversas animações de combate e todo o sistema implementado em UI do movimento das cartas (utilizar, comprar, descartar, embaralhar), além do sistema de turnos nos quais o player alterna com os inimigos.
+  
+ ### Inimigos:
+  Há dois tipos de inimigos, um simples goblin que apenas alterna entre golpes fracos e um golpe forte, e um morcego ciclop que, alem de ataques normais, possui um debuff que deixa o player confuso, fazendo assim com que ele não consiga escolher o alvo do seu ataque.
+  
+  ### Baralho:
+  O projeto também conta com diversas funções que tem como objetivo, guardar o baralho do player, embaralhar o baralho, buscar cartas do baralho, retornar cartas para o baralho, mandar cartas usadas para o cemitério, comprar cartas, editar o baralho por meio de uma interface de inventário, entre outros detalhes.
+   
+ ### Outros:
+ Há também uma parte inacabada que se trata de encontros randômicos que o jogador poderia ter no meio da campanha, nos quais trariam escolhas para o jogador que alterariam o resultado do encontro, coisas como atacar, ou poupar, ou roubar, etc... Entretanto, essa parte estava em uma fase bem rudimentar quando foi descontinuada.
  
 ![image](https://user-images.githubusercontent.com/79996413/172729169-331b33e0-f469-4d7a-a9cd-b1755de973db.png)
 
